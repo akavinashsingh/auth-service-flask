@@ -29,6 +29,33 @@ def get_db():
         ssl={"ssl_disabled": False}  # required for Railway MySQL
     )
 
+# 🗄️ Initialize database tables
+def init_db():
+    """Initialize database tables"""
+    try:
+        conn = get_db()
+        cur = conn.cursor()
+        
+        cur.execute("""
+            CREATE TABLE IF NOT EXISTS users (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                username VARCHAR(100) NOT NULL,
+                email VARCHAR(100) NOT NULL UNIQUE,
+                password VARCHAR(255) NOT NULL,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+        
+        conn.commit()
+        conn.close()
+        print("✅ Database initialized successfully")
+    except Exception as e:
+        print(f"⚠️ Database initialization error: {e}")
+
+# Initialize database when app starts
+with app.app_context():
+    init_db()
+
 @app.route("/")
 def index():
     return render_template("index.html")
