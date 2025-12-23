@@ -26,7 +26,7 @@ def get_db():
         database=url.path[1:],  # remove leading '/'
         port=url.port,
         cursorclass=pymysql.cursors.DictCursor,
-        ssl={"ssl": {}}  # required for Railway MySQL
+        ssl={"ssl_disabled": False}  # required for Railway MySQL
     )
 
 @app.route("/")
