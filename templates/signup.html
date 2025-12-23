@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Sign Up</h1>
+
+    <form method="POST" action="/signup">
+        Username: <input type="text" name="username" required><br><br>
+        Email: <input type="email" name="email" required><br><br>
+        Password: <input type="password" name="password" required><br><br>
+        <input class="btn btn-warning" type="submit" value="Register">
+    </form>
+
+    <br>
+    <a href="/login">Back to Login</a><br>
+    <a href="/">Back to Welcome</a>
+</body>
+</html>
