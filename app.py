@@ -5,21 +5,16 @@ from urllib.parse import urlparse
 
 app = Flask(__name__)
 
-# 🔐 CHANGE 1: secret key from env (Railway-safe)
+# 🔐 Secret key from environment
 app.secret_key = os.getenv("SECRET_KEY", "dev-secret")
 
-# 🔌 CHANGE 2: Database connection via DATABASE_URL
+# 🔌 Database connection (Render + Railway compatible)
 def get_db():
     database_url = os.getenv("DATABASE_URL")
 
-    # Local fallback (optional, for local testing)
     if not database_url:
-        return pymysql.connect(
-            host="localhost",
-            user="root",
-            password="root",
-            database="flask_auth",
-            cursorclass=pymysql.cursors.DictCursor
+        raise RuntimeError(
+            "DATABASE_URL is not set. Add it in Render Environment Variables."
         )
 
     url = urlparse(database_url)
@@ -28,10 +23,10 @@ def get_db():
         host=url.hostname,
         user=url.username,
         password=url.password,
-        database=url.path[1:],     # remove leading '/'
+        database=url.path[1:],  # remove leading '/'
         port=url.port,
         cursorclass=pymysql.cursors.DictCursor,
-        ssl={"ssl": {}}            # REQUIRED for Railway MySQL
+        ssl={"ssl": {}}  # required for Railway MySQL
     )
 
 @app.route("/")
@@ -94,14 +89,10 @@ def logout():
     session.clear()
     return redirect(url_for("login"))
 
-# 🚀 CHANGE 3: Railway-compatible run config
+# 🚀 Local only (ignored by Render)
 if __name__ == "__main__":
     app.run(
         host="0.0.0.0",
         port=int(os.getenv("PORT", 5000)),
         debug=False
     )
-
-    if __name__ == "__main__":
-        app.run(host="0.0.0.0", port=5000)
-
