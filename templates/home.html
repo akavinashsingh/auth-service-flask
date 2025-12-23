@@ -9,41 +9,39 @@
   </head>
   <body class="container mt-5">
     <h2>Welcome {{ user }}</h2>
-    <div class="mt-4">
-      <h4 class="text-center">ABSTRACT</h4>
-      <h5>
-        Encrypted Online Examination Question Paper Distribution with Role-Based
-        Access Control
-      </h5>
-      <p>
-        In today's digital education ecosystem, online examinations have become
-        widely adopted; however, ensuring the security of examination question
-        papers remains a significant challenge. Issues such as unauthorized
-        access, data tampering, and question paper leakage threaten the
-        integrity of online assessments. This project presents an Encrypted
-        Online Examination Question Paper Distribution System with Role-Based
-        Access Control (RBAC) designed to securely manage and distribute
-        examination materials while restricting access to authorized users only.
-        The proposed system follows a robust full-stack architecture. The front
-        end is developed using HTML, Bootstrap, and JavaScript, providing a
-        responsive and user-friendly interface. The backend is implemented using
-        Python Flask, which handles secure authentication, encryption,
-        authorization, and data communication. SQLite3 is used as the database
-        to store user credentials, assigned roles, encrypted question papers,
-        and examination schedules. At the core of the system, AES-256 encryption
-        ensures confidentiality of question papers both during storage and
-        transmission. Role-Based Access Control defines clear permission levels,
-        where administrators manage system operations, teachers upload and
-        schedule encrypted question papers, and students gain time-restricted
-        access to papers only during the examination window. Additional security
-        features such as multi-step authentication, activity logging, and
-        controlled decryption further enhance system reliability. Overall, the
-        system significantly improves examination security, reduces manual
-        administrative effort by approximately 70%, and provides a scalable,
-        cost-effective solution for conducting fair and secure online
-        examinations in academic institutions.
-      </p>
-    </div>
+    <h4 class="text-center mt-4">ABSTRACT</h4>
+    <h5>
+      Encrypted Online Examination Question Paper Distribution with Role-Based
+      Access Control
+    </h5>
+    <p>
+      In today's digital education ecosystem, online examinations have become
+      widely adopted; however, ensuring the security of examination question
+      papers remains a significant challenge. Issues such as unauthorized
+      access, data tampering, and question paper leakage threaten the integrity
+      of online assessments. This project presents an Encrypted Online
+      Examination Question Paper Distribution System with Role-Based Access
+      Control (RBAC) designed to securely manage and distribute examination
+      materials while restricting access to authorized users only. The proposed
+      system follows a robust full-stack architecture. The front end is
+      developed using HTML, Bootstrap, and JavaScript, providing a responsive
+      and user-friendly interface. The backend is implemented using Python
+      Flask, which handles secure authentication, encryption, authorization, and
+      data communication. SQLite3 is used as the database to store user
+      credentials, assigned roles, encrypted question papers, and examination
+      schedules. At the core of the system, AES-256 encryption ensures
+      confidentiality of question papers both during storage and transmission.
+      Role-Based Access Control defines clear permission levels, where
+      administrators manage system operations, teachers upload and schedule
+      encrypted question papers, and students gain time-restricted access to
+      papers only during the examination window. Additional security features
+      such as multi-step authentication, activity logging, and controlled
+      decryption further enhance system reliability. Overall, the system
+      significantly improves examination security, reduces manual administrative
+      effort by approximately 70%, and provides a scalable, cost-effective
+      solution for conducting fair and secure online examinations in academic
+      institutions.
+    </p>
     <a href="/logout" class="btn btn-danger mt-3">Logout</a>
   </body>
 </html>
