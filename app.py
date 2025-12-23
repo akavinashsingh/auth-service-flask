@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 
 app = Flask(__name__)
 
-# 🔐 Secret key from environment
+# 🔐 Secret key from environment..
 app.secret_key = os.getenv("SECRET_KEY", "dev-secret")
 
 # 🔌 Database connection (Render + Railway compatible)
