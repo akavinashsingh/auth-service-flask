@@ -18,7 +18,7 @@ This application supports **both local MySQL** and **Railway-hosted MySQL** for 
 * Simple HTML Frontend
 * Easy Local & Cloud Deployment
 
----
+
 
 ## 🛠️ Tech Stack
 
